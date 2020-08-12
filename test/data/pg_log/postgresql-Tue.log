@@ -1,0 +1,3484 @@
+LOG:  database system was shut down at 2020-08-11 10:42:58 PDT
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+ERROR:  syntax error at or near "ls" at character 1
+STATEMENT:  ls
+	cd ..
+	ls
+	INSERT INTO Students VALUES (860507041, 'John Anderson', 3.67)
+	INSERT INTO Students VALUES (860309067, 'Tom Kamber', 3.12)
+	INSERT INTO Students VALUES (860507041, 'John Anderson', 3.67);
+ERROR:  syntax error at or near "CREATE" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL)
+	CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN))
+	CREATE TABLE ServiceRequest (problem CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comment CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION)
+	CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic)
+	CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic)
+ERROR:  syntax error at or near "CREATE" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL)
+	CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN))
+	CREATE TABLE ServiceRequest (problem CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comment CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION)
+	CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic)
+	CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic)
+ERROR:  syntax error at or near "CREATE" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL)
+	CREATE TABLE Cars (VIN INTEGER,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER,
+			   PRIMARY KEY (VIN))
+	CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comment CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION)
+	CREATE TABLE Mechanic (years_of_exp INTEGER,
+			       employee_id INTEGER,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE owns (VIN INTEGER,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE checks (VIN INTEGER,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE works_on (VIN INTEGER,
+			       employee_id INTEGER,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic)
+	CREATE TABLE creates (employee_id INTEGER,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic)
+ERROR:  syntax error at or near "CREATE" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL)
+	CREATE TABLE Cars (VIN CHAR(20) NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER,
+			   PRIMARY KEY (VIN))
+	CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comment CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION)
+	CREATE TABLE Mechanic (years_of_exp INTEGER,
+			       employee_id INTEGER,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE owns (VIN CHAR(20) NOT NULL,,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE checks (VIN CHAR(20) NOT NULL,,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE works_on (VIN CHAR(20) NOT NULL,,
+			       employee_id INTEGER,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic)
+	CREATE TABLE creates (employee_id INTEGER,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic)
+ERROR:  syntax error at or near "CREATE" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL)
+	CREATE TABLE Cars (VIN numeric(9,0),
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER,
+			   PRIMARY KEY (VIN))
+	CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comment CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION)
+	CREATE TABLE Mechanic (years_of_exp INTEGER,
+			       employee_id INTEGER,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE owns (VIN CHAR(20) NOT NULL,,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE checks (VIN CHAR(20) NOT NULL,,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE works_on (VIN CHAR(20) NOT NULL,,
+			       employee_id INTEGER,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic)
+	CREATE TABLE creates (employee_id INTEGER,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic)
+ERROR:  syntax error at or near "CREATE" at character 135
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER,
+			   PRIMARY KEY (VIN))
+	CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comment CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION)
+	CREATE TABLE Mechanic (years_of_exp INTEGER,
+			       employee_id INTEGER,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE owns (VIN CHAR(20) NOT NULL,,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE checks (VIN CHAR(20) NOT NULL,,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE works_on (VIN CHAR(20) NOT NULL,,
+			       employee_id INTEGER,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic)
+	CREATE TABLE creates (employee_id INTEGER,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic)
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 362
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comment CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER,
+			       employee_id INTEGER,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  foreign key constraint "owns_vin_fkey" cannot be implemented
+DETAIL:  Key columns "vin" and "vin" are of incompatible types: character and integer.
+STATEMENT:  CREATE TABLE owns (VIN CHAR(20) NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  syntax error at or near "," at character 44
+STATEMENT:  CREATE TABLE checks (VIN CHAR(20) NOT NULL,,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  foreign key constraint "works_on_vin_fkey" cannot be implemented
+DETAIL:  Key columns "vin" and "vin" are of incompatible types: character and integer.
+STATEMENT:  CREATE TABLE works_on (VIN CHAR(20) NOT NULL,
+			       employee_id INTEGER,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER,
+			   PRIMARY KEY (VIN));
+ERROR:  syntax error at or near "ON" at character 362
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comment CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER,
+			       employee_id INTEGER,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  foreign key constraint "owns_vin_fkey" cannot be implemented
+DETAIL:  Key columns "vin" and "vin" are of incompatible types: character and integer.
+STATEMENT:  CREATE TABLE owns (VIN CHAR(20) NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  foreign key constraint "checks_vin_fkey" cannot be implemented
+DETAIL:  Key columns "vin" and "vin" are of incompatible types: character and integer.
+STATEMENT:  CREATE TABLE checks (VIN CHAR(20) NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  foreign key constraint "works_on_vin_fkey" cannot be implemented
+DETAIL:  Key columns "vin" and "vin" are of incompatible types: character and integer.
+STATEMENT:  CREATE TABLE works_on (VIN CHAR(20) NOT NULL,
+			       employee_id INTEGER,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER,
+			   PRIMARY KEY (VIN));
+ERROR:  syntax error at or near "ON" at character 363
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER,
+			       employee_id INTEGER,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  foreign key constraint "owns_vin_fkey" cannot be implemented
+DETAIL:  Key columns "vin" and "vin" are of incompatible types: character and integer.
+STATEMENT:  CREATE TABLE owns (VIN CHAR(20) NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  foreign key constraint "checks_vin_fkey" cannot be implemented
+DETAIL:  Key columns "vin" and "vin" are of incompatible types: character and integer.
+STATEMENT:  CREATE TABLE checks (VIN CHAR(20) NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  foreign key constraint "works_on_vin_fkey" cannot be implemented
+DETAIL:  Key columns "vin" and "vin" are of incompatible types: character and integer.
+STATEMENT:  CREATE TABLE works_on (VIN CHAR(20) NOT NULL,
+			       employee_id INTEGER,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN));
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN));
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN));
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN));
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 157
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN)
+			   ON DELETE NO ACTION);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 157
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN)
+			   ON DELETE NO ACTION;);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION;);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 157
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN)
+			   ON DELETE NO ACTION;);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION;);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION)
+	CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION)
+	CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  syntax error at or near "CREATE" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL)
+	CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION)
+	CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION)
+	CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION)
+	CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION)
+	CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION)
+	CREATE TABLE owns (VIN INTEGER NOT NULL,
+	                   PRIMARY KEY (VIN),
+	                   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION)
+	CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+	                   PRIMARY KEY (VIN),
+	                   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL);
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (vin INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (vin),
+			   ON DELETE NO ACTION);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (vin) REFERENCES Cars);
+ERROR:  table "servicerequest" does not exist
+STATEMENT:  DROP TABLE ServiceRequest CASCADE;
+ERROR:  table "mechanic" does not exist
+STATEMENT:  DROP TABLE Mechanic CASCADE;
+ERROR:  table "works_on" does not exist
+STATEMENT:  DROP TABLE works_on CASCADE;
+ERROR:  table "creates" does not exist
+STATEMENT:  DROP TABLE creates CASCADE;
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  syntax error at or near "CREATE" at character 106
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars)
+	CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic)
+	CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic)
+ERROR:  table "cars" does not exist
+STATEMENT:  DROP TABLE Cars CASCADE;
+ERROR:  table "owns" does not exist
+STATEMENT:  DROP TABLE owns CASCADE;
+ERROR:  table "checks" does not exist
+STATEMENT:  DROP TABLE checks CASCADE;
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL
+	);
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION
+	);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  syntax error at or near "ON" at character 158
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   ON DELETE NO ACTION
+	);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY (employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY (VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY (VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY (employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  syntax error at or near "ON" at character 157
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   ON DELETE NO ACTION
+	);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY(VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  syntax error at or near ")" at character 152
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+	);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE NO ACTION
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY(VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  syntax error at or near "ON" at character 157
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   Primary Key(VIN),
+			   ON DELETE CASCADE
+	);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE CASCADE
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       Primary Key(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   Primary Key(VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     Primary Key(VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       Primary Key(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  syntax error at or near "ON" at character 157
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   ON DELETE CASCADE
+	);
+ERROR:  syntax error at or near "ON" at character 372
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic,
+				     ON DELETE CASCADE
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     PRIMARY KEY(VIN),
+			     FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  syntax error at or near "ON" at character 236
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid),
+			       ON DELETE NO ACTION
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer,
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  table "customer" does not exist
+STATEMENT:  DROP TABLE customer CASCADE;
+ERROR:  syntax error at or near "ON" at character 236
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid),
+			       ON DELETE NO ACTION
+	;
+	CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer
+	);
+	CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+	CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+	CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer,
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+	CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+	CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+	CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  table "customer" does not exist
+STATEMENT:  DROP TABLE customer CASCADE;
+ERROR:  syntax error at or near "ON" at character 236
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid),
+			       ON DELETE NO ACTION
+	;)
+	CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer,
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  table "customer" does not exist
+STATEMENT:  DROP TABLE customer CASCADE;
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer,
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  syntax error at or near "ON" at character 206
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer(cid),
+			   ON DELETE NO ACTION
+	);
+ERROR:  syntax error at or near "ON" at character 453
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic(employee_id),
+				     ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer,
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  syntax error at or near "ON" at character 206
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer(cid),
+			   ON DELETE NO ACTION
+	);
+ERROR:  syntax error at or near "ON" at character 453
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic(employee_id),
+				     ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer,
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  syntax error at or near "ON" at character 206
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer(cid),
+			   ON DELETE NO ACTION;
+	);
+ERROR:  syntax error at or near "ON" at character 453
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic(employee_id),
+				     ON DELETE NO ACTION;
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer,
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  syntax error at or near "ON" at character 206
+STATEMENT:  CREATE TABLE cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES customer(cid),
+			   ON DELETE NO ACTION;
+	);
+ERROR:  syntax error at or near "ON" at character 453
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES mechanic(employee_id),
+				     ON DELETE NO ACTION;
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES cars
+	);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES customer,
+			   FOREIGN KEY (VIN) REFERENCES cars
+	);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES cars,
+			       FOREIGN KEY (employee_id) REFERENCES mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  syntax error at or near "ON" at character 206
+STATEMENT:  CREATE TABLE cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES customer(cid),
+			   ON DELETE NO ACTION;
+	);
+ERROR:  syntax error at or near "ON" at character 453
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES mechanic(employee_id),
+				     ON DELETE NO ACTION;
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES cars
+	);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES customer,
+			   FOREIGN KEY (VIN) REFERENCES cars
+	);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES cars,
+			       FOREIGN KEY (employee_id) REFERENCES mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES cars
+	);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES customer,
+			   FOREIGN KEY (VIN) REFERENCES cars
+	);
+ERROR:  relation "checks" already exists
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES cars,
+			       FOREIGN KEY (employee_id) REFERENCES mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  cannot drop table cars because other objects depend on it
+DETAIL:  constraint owns_vin_fkey on table owns depends on table cars
+	constraint checks_vin_fkey on table checks depends on table cars
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE cars;
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES cars,
+			       FOREIGN KEY (employee_id) REFERENCES mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  cannot drop table customer because other objects depend on it
+DETAIL:  constraint owns_cid_fkey on table owns depends on table customer
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE customer;
+ERROR:  cannot drop table cars because other objects depend on it
+DETAIL:  constraint owns_vin_fkey on table owns depends on table cars
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE cars;
+ERROR:  table "checks" does not exist
+STATEMENT:  DROP TABLE checks;
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  syntax error at or near "[" at character 12
+STATEMENT:  DROP TABLE [customer];
+ERROR:  syntax error at or near "[" at character 12
+STATEMENT:  DROP TABLE [cars];
+ERROR:  syntax error at or near "[" at character 12
+STATEMENT:  DROP TABLE [owns];
+ERROR:  syntax error at or near "[" at character 12
+STATEMENT:  DROP TABLE [checks];
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer,
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  cannot drop table customer because other objects depend on it
+DETAIL:  constraint owns_cid_fkey on table owns depends on table customer
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE customer;
+ERROR:  cannot drop table cars because other objects depend on it
+DETAIL:  constraint owns_vin_fkey on table owns depends on table cars
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE cars;
+ERROR:  table "checks" does not exist
+STATEMENT:  DROP TABLE checks;
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  syntax error at or near "IF" at character 21
+STATEMENT:  DROP TABLE customer IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 17
+STATEMENT:  DROP TABLE cars IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 17
+STATEMENT:  DROP TABLE owns IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 19
+STATEMENT:  DROP TABLE checks IF EXISTS;
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "owns" already exists
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer,
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  cannot drop table customer because other objects depend on it
+DETAIL:  constraint owns_cid_fkey on table owns depends on table customer
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE customer;
+ERROR:  cannot drop table cars because other objects depend on it
+DETAIL:  constraint owns_vin_fkey on table owns depends on table cars
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE cars;
+ERROR:  table "checks" does not exist
+STATEMENT:  DROP TABLE checks;
+ERROR:  syntax error at or near "IF" at character 21
+STATEMENT:  DROP TABLE customer IF EXISTS
+	DROP TABLE cars IF EXISTS
+	DROP TABLE owns IF EXISTS
+	DROP TABLE checks IF EXISTS
+	CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  cannot drop table customer because other objects depend on it
+DETAIL:  constraint owns_cid_fkey on table owns depends on table customer
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE customer;
+ERROR:  cannot drop table cars because other objects depend on it
+DETAIL:  constraint owns_vin_fkey on table owns depends on table cars
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE cars;
+ERROR:  table "checks" does not exist
+STATEMENT:  DROP TABLE checks;
+ERROR:  syntax error at or near "[" at character 21
+STATEMENT:  DROP TABLE customer [IF EXISTS];
+ERROR:  syntax error at or near "[" at character 17
+STATEMENT:  DROP TABLE cars [IF EXISTS];
+ERROR:  syntax error at or near "[" at character 17
+STATEMENT:  DROP TABLE owns [IF EXISTS];
+ERROR:  syntax error at or near "[" at character 19
+STATEMENT:  DROP TABLE checks [IF EXISTS];
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  cannot drop table customer because other objects depend on it
+DETAIL:  constraint owns_cid_fkey on table owns depends on table customer
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE customer;
+ERROR:  cannot drop table cars because other objects depend on it
+DETAIL:  constraint owns_vin_fkey on table owns depends on table cars
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE cars;
+ERROR:  table "checks" does not exist
+STATEMENT:  DROP TABLE checks;
+ERROR:  syntax error at or near "[" at character 12
+STATEMENT:  DROP TABLE [IF EXISTS] customer;
+ERROR:  syntax error at or near "[" at character 12
+STATEMENT:  DROP TABLE [IF EXISTS] cars;
+ERROR:  syntax error at or near "[" at character 12
+STATEMENT:  DROP TABLE [IF EXISTS] owns;
+ERROR:  syntax error at or near "[" at character 12
+STATEMENT:  DROP TABLE [IF EXISTS] checks;
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  cannot drop table customer because other objects depend on it
+DETAIL:  constraint owns_cid_fkey on table owns depends on table customer
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE customer;
+ERROR:  cannot drop table cars because other objects depend on it
+DETAIL:  constraint owns_vin_fkey on table owns depends on table cars
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE cars;
+ERROR:  table "checks" does not exist
+STATEMENT:  DROP TABLE checks;
+ERROR:  syntax error at or near "IF" at character 21
+STATEMENT:  DROP TABLE customer IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 17
+STATEMENT:  DROP TABLE cars IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 27
+STATEMENT:  DROP TABLE servicerequest IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 21
+STATEMENT:  DROP TABLE mechanic IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 17
+STATEMENT:  DROP TABLE owns IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 19
+STATEMENT:  DROP TABLE checks IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 21
+STATEMENT:  DROP TABLE works_on IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 20
+STATEMENT:  DROP TABLE creates IF EXISTS;
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  cannot drop table customer because other objects depend on it
+DETAIL:  constraint owns_cid_fkey on table owns depends on table customer
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE customer;
+ERROR:  cannot drop table cars because other objects depend on it
+DETAIL:  constraint owns_vin_fkey on table owns depends on table cars
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE cars;
+ERROR:  table "checks" does not exist
+STATEMENT:  DROP TABLE checks;
+ERROR:  syntax error at or near "IF" at character 21
+STATEMENT:  DROP TABLE customer IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 17
+STATEMENT:  DROP TABLE cars IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 27
+STATEMENT:  DROP TABLE servicerequest IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 21
+STATEMENT:  DROP TABLE mechanic IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 17
+STATEMENT:  DROP TABLE owns IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 19
+STATEMENT:  DROP TABLE checks IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 21
+STATEMENT:  DROP TABLE works_on IF EXISTS;
+ERROR:  syntax error at or near "IF" at character 20
+STATEMENT:  DROP TABLE creates IF EXISTS;
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  cannot drop table customer because other objects depend on it
+DETAIL:  constraint owns_cid_fkey on table owns depends on table customer
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE IF EXISTS customer;
+ERROR:  cannot drop table cars because other objects depend on it
+DETAIL:  constraint owns_vin_fkey on table owns depends on table cars
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE IF EXISTS cars;
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  cannot drop table customer because other objects depend on it
+DETAIL:  constraint owns_cid_fkey on table owns depends on table customer
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE IF EXISTS customer;
+ERROR:  cannot drop table cars because other objects depend on it
+DETAIL:  constraint owns_vin_fkey on table owns depends on table cars
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE IF EXISTS cars;
+ERROR:  relation "customer" already exists
+STATEMENT:  CREATE TABLE Customer (cid INTEGER NOT NULL,
+			       first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+			       PRIMARY KEY(cid)
+	);
+ERROR:  relation "cars" already exists
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "servicerequest" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  column "cid" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+			   make CHAR(20) NOT NULL,
+			   model CHAR(20) NOT NULL,
+			   year INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer,
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "customer" does not exist
+STATEMENT:  CREATE TABLE Cars (VIN INTEGER NOT NULL,
+	                   make CHAR(20) NOT NULL,
+	                   model CHAR(20) NOT NULL,
+	                   year INTEGER NOT NULL,
+	                   PRIMARY KEY(VIN),
+	                   FOREIGN KEY (cid) REFERENCES Customer ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (RequestID INTEGER NOT NULL,
+				     problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     PRIMARY KEY(RequestID),
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE owns (VIN INTEGER NOT NULL,
+			   cid INTEGER NOT NULL,
+			   PRIMARY KEY(VIN),
+			   FOREIGN KEY (cid) REFERENCES Customer,
+			   FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE checks (VIN INTEGER NOT NULL,
+			     RequestID INTEGER NOT NULL,
+			     PRIMARY KEY(VIN,RequestID),
+			     FOREIGN KEY (VIN) REFERENCES Cars,
+			     FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      RequestID INTEGER NOT NULL,
+			      PRIMARY KEY(RequestID),
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic,
+			      FOREIGN KEY (RequestID) REFERENCES ServiceRequest
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+			       employee_id INTEGER NOT NULL,
+			       PRIMARY KEY(employee_id),
+			       FOREIGN KEY (VIN) REFERENCES Cars,
+			       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+			      FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars,
+	                       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+	                      FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars,
+	                       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+	                      FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "cars" does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars,
+	                       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+	                      FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars,
+	                       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+	                      FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars,
+	                       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+	                      FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars,
+	                       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  column "vin" referenced in foreign key constraint does not exist
+STATEMENT:  CREATE TABLE Mechanic (years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE ServiceRequest (problems CHAR(30) NOT NULL,
+				     bill CHAR(20) NOT NULL,
+				     odometer_reading CHAR(20) NOT NULL,
+				     comments CHAR(30) NOT NULL,
+				     status CHAR(20) NOT NULL,
+				     open_date DATE NOT NULL,
+				     close_date DATE NOT NULL,
+				     employee_id INTEGER NOT NULL,
+				     FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE creates (employee_id INTEGER NOT NULL,
+	                      FOREIGN KEY (employee_id) REFERENCES Mechanic ON DELETE NO ACTION
+	);
+ERROR:  relation "mechanic" does not exist
+STATEMENT:  CREATE TABLE works_on (VIN INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars,
+	                       FOREIGN KEY (employee_id) REFERENCES Mechanic
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
+ERROR:  cannot drop table mechanic because other objects depend on it
+DETAIL:  constraint creates_employee_id_fkey on table creates depends on table mechanic
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE IF EXISTS mechanic;
+ERROR:  relation "mechanic" already exists
+STATEMENT:  CREATE TABLE Mechanic (VIN INTEGER NOT NULL,
+			       years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
+ERROR:  cannot drop table mechanic because other objects depend on it
+DETAIL:  constraint works_on_employee_id_fkey on table works_on depends on table mechanic
+	constraint creates_employee_id_fkey on table creates depends on table mechanic
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE IF EXISTS mechanic;
+ERROR:  relation "mechanic" already exists
+STATEMENT:  CREATE TABLE Mechanic (VIN INTEGER NOT NULL,
+			       years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
+ERROR:  cannot drop table mechanic because other objects depend on it
+DETAIL:  constraint works_on_employee_id_fkey on table works_on depends on table mechanic
+	constraint creates_employee_id_fkey on table creates depends on table mechanic
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+STATEMENT:  DROP TABLE IF EXISTS mechanic;
+ERROR:  relation "mechanic" already exists
+STATEMENT:  CREATE TABLE Mechanic (VIN INTEGER NOT NULL,
+			       years_of_exp INTEGER NOT NULL,
+	                       employee_id INTEGER NOT NULL,
+	                       first_name CHAR(20) NOT NULL,
+	                       last_name CHAR(20) NOT NULL,
+	                       PRIMARY KEY(employee_id),
+	                       FOREIGN KEY (VIN) REFERENCES Cars
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
+ERROR:  syntax error at or near ")" at character 169
+STATEMENT:  CREATE TABLE Customer (first_name CHAR(20) NOT NULL,
+			       last_name CHAR(20) NOT NULL,
+			       phone_number CHAR(12) NOT NULL,
+			       address CHAR(30) NOT NULL,
+	);
